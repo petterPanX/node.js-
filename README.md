@@ -29,3 +29,33 @@
   // ...
 }
 ```
+除了原有的test脚本，上面代码新定义了三个脚本，它们的作用如下。<br>
+* lint：检查所有js文件的代码
+* lint-html：将检查结果写入一个网页文件./reports/lint-results.html
+* lint-fix：自动修正某些不规范的代码
+（5）运行静态检查命令。<br>
+```
+$ npm run lint
+
+  1:5  error    Unexpected var, use let or const instead  no-var
+  2:5  warning  Unexpected console statement              no-console
+
+✖ 2 problems (1 error, 1 warning)
+```
+正常情况下，该命令会从index.js脚本里面，检查出来两个错误：一个是不应该使用var命令，另一个是不应该在生产环境使用console.log方法。<br>
+（6）修正错误。<br>
+`$ npm run lint-fix`
+运行上面的命令以后，再查看index.js，可以看到var x = 1;被自动改成了const x = 1;。这样就消除了一个错误，但是还留下一个错误。<br>
+（7）修改规则。<br>
+由于我们想要允许使用console.log方法，因此可以修改.eslintrc.json，改变no-console规则。请将.eslintrc.json改成下面的样子。<br>
+```
+{
+  "extends": "airbnb-base",
+
+  "rules": {
+    "no-console": "off"
+  }
+  ```
+  再运行npm run lint，就不会报错了。<br>
+  `$ npm run lint`
+}
