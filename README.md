@@ -58,4 +58,3 @@ $ npm run lint
   ```
   再运行npm run lint，就不会报错了。<br>
   `$ npm run lint`
-}
