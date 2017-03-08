@@ -16,3 +16,16 @@
   "extends": "airbnb-base"
 }
 ```
+（4）打开项目的package.json，在scripts字段里面添加三个脚本。<br>
+```
+{
+  // ...
+  "scripts" : {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js",
+    "lint-html": "eslint **/*.js -f html -o ./reports/lint-results.html",
+    "lint-fix": "eslint --fix **/*.js"
+  },
+  // ...
+}
+```
