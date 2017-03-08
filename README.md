@@ -3,6 +3,6 @@
 ## ESLint
 1 学会使用 ESLint 进行代码检查。
 ## 操作步骤
-（1）进入demos/eslint-demo目录，安装 ESLint。
-'$ cd demos/eslint-demo'
-'$ npm install eslint --save-dev'
+（1）进入demos/eslint-demo目录，安装 ESLint。<br>
+`$ cd demos/eslint-demo`<br>
+`$ npm install eslint --save-dev`
